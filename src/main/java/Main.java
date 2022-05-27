@@ -8,7 +8,7 @@ public class Main {
         String b ="Skipper";
         String c ="Rico_kaboom";
         String d ="Private";
-        String e = "Kano";
+        String e = "Sub-Zero";
         String f ="Scorpion";
         String g ="Kano";
         String h ="Jax";
@@ -18,9 +18,6 @@ public class Main {
         String m ="Gadget";
         String n ="Zipper";
         String o ="FatCat";
-
-
-
 
     DoubleLinkedList <String> doubleLinkedList = new DoubleLinkedList<>(3);
 
@@ -119,7 +116,7 @@ public class Main {
        //for (String str1:doubleLinkedList){System.out.println(str1);}
        // System.out.println("**********************");
 
-        System.out.println(doubleLinkedList.equals(f));
+        System.out.println(doubleLinkedList.equals(doubleLinkedList2));
         System.out.println("**********************");
 
         System.out.println(Arrays.deepToString(doubleLinkedList.toArray()));
@@ -144,7 +141,8 @@ public class Main {
         System.out.println(doubleLinkedList.size());
 
         System.out.println("**********************");
-        doubleLinkedList.addAll(doubleLinkedList1);
+        doubleLinkedList.addAll(doubleLinkedList1);/*Вот здесь мы  получем NoSuchElementException, и так мне и надо, но как
+                                                     избавиться от хвостов правильно я пока не придумал*/
        for(String str2:doubleLinkedList){System.out.println(str2);}
 
         System.out.println("doubleLinkedList.containsAll(nLl)  " + doubleLinkedList.containsAll(nLl));
@@ -152,7 +150,8 @@ public class Main {
         System.out.println("**********************");
 
 
-         System.out.println("результат вызова метода ( <String> String[] toArray(String[] a))" + Arrays.deepToString(doubleLinkedList.toArray()));
+        // System.out.println("результат вызова метода ( <String> String[] toArray(String[] a))" + Arrays.deepToString(doubleLinkedList.toArray()));
+        //этот метод пока не запускаем
         System.out.println("**********************");
 
         Iterator <String> iterator = doubleLinkedList.iterator();
