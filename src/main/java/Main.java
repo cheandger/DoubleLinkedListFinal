@@ -3,12 +3,12 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String a = "Kowalski";
         String b ="Skipper";
         String c ="Rico_kaboom";
         String d ="Private";
-        String e = "Sub-Zero";
+        String e = "Kano";
         String f ="Scorpion";
         String g ="Kano";
         String h ="Jax";
@@ -20,9 +20,14 @@ public class Main {
         String o ="FatCat";
 
 
-        DoubleLinkedList <String> doubleLinkedList = new DoubleLinkedList<>(3);
-        doubleLinkedList.add(a);
-        doubleLinkedList.add(b);
+
+
+    DoubleLinkedList <String> doubleLinkedList = new DoubleLinkedList<>(3);
+
+
+         doubleLinkedList.add(a);
+        System.out.println(doubleLinkedList.size());
+         doubleLinkedList.add(b);
         doubleLinkedList.add(c);
         doubleLinkedList.add(d);
         doubleLinkedList.add(e);
@@ -43,6 +48,7 @@ public class Main {
         doubleLinkedList1.add("Бывалый");
         doubleLinkedList1.add("Шурик");
         doubleLinkedList1.add("Жора");
+        doubleLinkedList1.add("Kano");
         doubleLinkedList1.add("Гоша");
         doubleLinkedList1.add("Гога");
         doubleLinkedList1.add("Георгий_Иваныч");
@@ -113,7 +119,7 @@ public class Main {
        //for (String str1:doubleLinkedList){System.out.println(str1);}
        // System.out.println("**********************");
 
-        System.out.println(doubleLinkedList.equals(doubleLinkedList2));
+        System.out.println(doubleLinkedList.equals(f));
         System.out.println("**********************");
 
         System.out.println(Arrays.deepToString(doubleLinkedList.toArray()));
@@ -129,6 +135,9 @@ public class Main {
         System.out.println("**********************");
 
         doubleLinkedList.remove("Kano");
+        doubleLinkedList.remove("Kano");
+        doubleLinkedList.remove("Kano");
+
 
 
 

@@ -5,17 +5,15 @@ import java.util.*;
 public class DoubleLinkedList<T extends Comparable<T>> implements Collection<String> {
 
     public LinkedList<LinkedList<String>> data;
-    public LinkedList<String> linkedList;
     public String[][] resultOfToArray;
     public Integer linkListCapacity;
 
 
-    public DoubleLinkedList(Integer linkListCapacity) throws IllegalArgumentException{
+    public DoubleLinkedList(Integer linkListCapacity){
         this.data = new LinkedList<>();
-        this.linkedList = new LinkedList<>();
-        data.add(linkedList);
+        data.add(new LinkedList<String>());
         this.linkListCapacity = linkListCapacity;
-        if(linkListCapacity<1){throw new IllegalArgumentException("The linkListCapacity must be greater than 1");}
+
     }
 
 
@@ -63,8 +61,7 @@ public class DoubleLinkedList<T extends Comparable<T>> implements Collection<Str
     public int size() {
         Integer count = 0;
         for (LinkedList<String> linkedList : data) {
-            if (linkedList.size()==0) data.remove(linkedList);
-            count = count + linkedList.size();
+           count = count + linkedList.size();
         }
         return count;
     }
@@ -94,9 +91,12 @@ public class DoubleLinkedList<T extends Comparable<T>> implements Collection<Str
 
 
     @Override
-    public boolean add(String string) throws IllegalArgumentException{
+    public boolean add(String string) {
+        if (string==null){
+            throw new RuntimeException ("The string can't be a null");
+        }
         this.data.getLast().add(string);
-        if (string==null){throw new IllegalArgumentException("The string can't be a null");}
+
 
         if ((data.getLast().size() == linkListCapacity)) {
             data.add(new LinkedList<>());
@@ -219,7 +219,7 @@ public class DoubleLinkedList<T extends Comparable<T>> implements Collection<Str
     }
     @Override
     public int hashCode() {
-        return Objects.hash(data, linkedList, linkListCapacity);
+        return Objects.hash(data, linkListCapacity);
     }
 }
 
