@@ -2,8 +2,7 @@ import java.rmi.server.ExportException;
 import java.sql.Array;
 import java.util.*;
 
-public class DoubleLinkedList<T extends Comparable<T>> implements Collection<String> {// Дженерик прикрутить была идея Дато, чтобы если что -
-    //сделать возможным работу не только со строками и можно было сравнивать объекты, но я пока и только со строками буксую.
+public class DoubleLinkedList<T extends Comparable<T>> implements Collection<String> {
 
     public LinkedList<LinkedList<String>> data;
     public Integer linkListCapacity;
